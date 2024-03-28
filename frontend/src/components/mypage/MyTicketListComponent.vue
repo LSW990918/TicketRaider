@@ -66,7 +66,7 @@ export default {
         const token = localStorage.getItem('token');
         console.log(token)
         console.error('jwtToken :', token);
-        const response = await axios.get('http://localhost:8080/getTicketListByUserId'
+        const response = await axios.get('http://43.200.140.164:8080/getTicketListByUserId'
             , {
               headers: {
                 Authorization: `Bearer ${token}` // JWT 토큰을 헤더에 포함하여 요청합니다.

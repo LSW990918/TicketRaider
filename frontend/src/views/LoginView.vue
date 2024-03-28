@@ -54,7 +54,7 @@ const signUp = () => {
 const signIn = async () => {
   try {
     console.log(email, password); // 입력된 값 출력
-    const response = await axios.post('http://localhost:8080/members/login', {
+    const response = await axios.post(`http://43.200.140.164:8080/members/login`, {
       email: email,
       password: password
     });

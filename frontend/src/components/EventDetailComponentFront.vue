@@ -11,7 +11,7 @@ const route = useRoute(); // useRoute()를 사용하여 현재 라우팅 정보�
 const fetchEventDetail = async () => {
   const eventId = Number(route.params.eventId); // 이벤트 ID를 Long으로 변환
   try {
-    const response = await axios.get(`http://localhost:8080/events/${eventId}`);
+    const response = await axios.get(`http://43.200.140.164:8080/events/${eventId}`);
     event.value = response.data;
   } catch (error) {
     console.error('이벤트 상세 정보를 불러오는 동안 오류가 발생했습니다:', error);

@@ -66,7 +66,7 @@ const fetchEvents = async (page = 0) => {
   console.log(selectedCategory.value)
 
   try {
-    const response = await axios.get('http://localhost:8080/events', {
+    const response = await axios.get('http://43.200.140.164:8080/events', {
       params: {
         page: page,
         size: pageSize,

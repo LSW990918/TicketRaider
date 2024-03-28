@@ -22,7 +22,7 @@ function resetModal() {
 const fetchEventDetail = async () => {
   const eventId = Number(route.params.eventId);
   try {
-    const response = await axios.get(`http://localhost:8080/events/${eventId}`);
+    const response = await axios.get(`http://43.200.140.164:8080/events/${eventId}`);
     event.value = response.data;
     // 이벤트 정보가 로드되면 해당 이벤트의 날짜로 date ref를 업데이트합니다.
     date.value = new Date(event.value.startDate);
@@ -44,7 +44,7 @@ const fetchBookedTicket = async () => {
 
 
   try {
-    const response = await axios.get(`http://localhost:8080/tickets/ticket-list/${eventId}`, {
+    const response = await axios.get(`http://43.200.140.164:8080/tickets/ticket-list/${eventId}`, {
       params: {date: formattedDate}
     });
     bookedSeatsIds.value = Array.isArray(response.data) ? response.data : [response.data];
@@ -117,7 +117,7 @@ const submitTicketReservation = async () => {
   const token = localStorage.getItem('token');
 
   try {
-    await axios.post(`http://localhost:8080/tickets/create`, reservationDetails
+    await axios.post(`http://43.200.140.164:8080/tickets/create`, reservationDetails
         ,
         {
           headers: {

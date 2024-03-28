@@ -28,7 +28,8 @@
 
 <script>
 import axios from 'axios';
-
+import {useRouter} from "vue-router";
+const router = useRouter();
 export default {
   data() {
     return {
@@ -40,17 +41,19 @@ export default {
   methods: {
     async submitForm() {
       try {
-        const response = await axios.post('http://localhost:8080/members/signUp', {
+        const response = await axios.post('http://43.200.140.164:8080/members/signUp', {
           email: this.email,
           password: this.password,
           nickname: this.nickname
         });
         console.log(response.data);
         // 여기서 적절한 응답 처리를 수행합니다.
+        await router.push('/event-list');
       } catch (error) {
         console.error(error);
         // 에러 처리 로직을 추가합니다.
       }
+
     }
   }
 }

@@ -97,7 +97,7 @@ export default {
       this.loading = true;
       try {
         const token = localStorage.getItem('token'); // JWT 토큰
-        const response = await axios.get(`http://localhost:8080/tickets/ticket-list/user`, {
+        const response = await axios.get(`http://43.200.140.164:8080/tickets/ticket-list/user`, {
           params: {
             page: this.page,
             size: this.size
@@ -130,7 +130,7 @@ export default {
     async cancelTicket(ticketId) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:8080/tickets/cancel/${ticketId}`, {
+        await axios.delete(`http://43.200.140.164:8080/tickets/cancel/${ticketId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           },
